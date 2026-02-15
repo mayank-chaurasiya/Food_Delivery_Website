@@ -4,6 +4,7 @@
   font-size: max(3vw, 18px);
   text-align: center;
   font-weight: 500;
+  scroll-margin-top: 120px;
 }
 
 .app-download-platforms {

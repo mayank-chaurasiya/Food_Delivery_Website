@@ -6,6 +6,7 @@
   box-sizing: border-box;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -20,6 +21,7 @@ a {
 .app {
   width: 80%;
   margin: auto;
+  padding-top: 120px;
 }
 
 @keyframes fadeIn {
