@@ -13,6 +13,13 @@ body {
   min-height: 100vh;
 }
 
+/* Blur effect for background when login popup is open */
+.blurred {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+}
+
 a {
   text-decoration: none;
   color: inherit;
