@@ -5,7 +5,8 @@ import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { cartItems, food_list, removeFromCart } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCart, getTotalCartAmount } =
+    useContext(StoreContext);
   const hasItems = Object.values(cartItems).some((qty) => qty > 0);
 
   useEffect(() => {
@@ -13,9 +14,9 @@ const Cart = () => {
   }, []);
   return (
     <div className="cart">
-      <div className="cart-items">
-        {hasItems ? (
-          <>
+      {hasItems ? (
+        <>
+          <div className="cart-items">
             <div className="cart-items-title">
               <p>Items</p>
               <p>Title</p>
@@ -48,14 +49,45 @@ const Cart = () => {
                 );
               }
             })}
-          </>
-        ) : (
-          <div className="cart-empty">
-            <h2>Cart is empty.</h2>
-            <Link to="/">Visit Home</Link>
           </div>
-        )}
-      </div>
+          <div className="cart-bottom">
+            <div className="cart-total">
+              <h2>Cart Total</h2>
+              <div>
+                <div className="cart-total-details">
+                  <p>Subtotal</p>
+                  <p>{getTotalCartAmount()}</p>
+                </div>
+                <hr />
+                <div className="cart-total-details">
+                  <p>Delivery Fee</p>
+                  <p>${2}</p>
+                </div>
+                <hr />
+                <div className="cart-total-details">
+                  <b>Total</b>
+                  <b>${getTotalCartAmount() + 2}</b>
+                </div>
+              </div>
+              <button>PROCEED TO CHECKOUT</button>
+            </div>
+            <div className="cart-promocode">
+              <div>
+                <p>If you have a promo code, Enter it here</p>
+                <div className="cart-promocode-input">
+                  <input type="text" placeholder="promocode" />
+                  <button>Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      ) : (
+        <div className="cart-empty">
+          <h2>Cart is empty.</h2>
+          <Link to="/">Visit Home</Link>
+        </div>
+      )}
     </div>
   );
 };
