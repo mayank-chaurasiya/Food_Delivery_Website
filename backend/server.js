@@ -16,6 +16,7 @@ connectDB();
 
 // Api endpoints
 app.use("/api/food", foodRouter);
+app.use("/images", express.static("uploads"));
 
 app.get("/", (req, res) => {
   res.send("API WORKING");
@@ -24,5 +25,3 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`server listening on http://localhost:${PORT}`);
 });
-
-// mongodb+srv://manny_db_user:bZQzcMgSpzIgVfnM@foodapp.l2gl1yn.mongodb.net/?appName=FoodApp
