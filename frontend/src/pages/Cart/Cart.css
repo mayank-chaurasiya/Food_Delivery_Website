@@ -34,11 +34,11 @@
   width: 60px;
 }
 
-.delete-cart-item-img {
+.fa-trash-can {
   cursor: pointer;
-  color: black;
+  color: tomato;
+  font-size: 18px;
 }
-
 .cart hr {
   height: 1px;
   background-color: #e2e2e2;

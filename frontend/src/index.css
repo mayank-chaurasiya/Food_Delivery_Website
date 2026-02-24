@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
 html,
 body,
 #root {
@@ -13,7 +15,6 @@ body,
 .app > *:not(.footer) {
   flex: 1 0 auto;
 }
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
 * {
   padding: 0;

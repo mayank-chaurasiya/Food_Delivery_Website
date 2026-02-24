@@ -1,7 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import "./Cart.css";
 import { StoreContext } from "../../components/context/StoreContext";
-import { assets } from "../../assets/assets";
 import { Link, useNavigate } from "react-router-dom";
 
 const Cart = () => {
@@ -39,12 +38,12 @@ const Cart = () => {
                       <p>${item.price}</p>
                       <p>{cartItems[item._id]}</p>
                       <p>${item.price * cartItems[item._id]}</p>
-                      <img
-                        className="delete-cart-item-img"
-                        src={assets.delete_icon}
-                        alt=""
-                        onClick={() => removeFromCart(item._id)}
-                      />
+                      <p>
+                        <i
+                          className="fa-solid fa-trash-can"
+                          onClick={() => removeFromCart(item._id)}
+                        ></i>
+                      </p>
                     </div>
                     <hr />
                   </>
