@@ -21,7 +21,7 @@ const placeOrder = async (req, res) => {
       price_data: {
         currency: "inr",
         product_data: {
-          name: item_name,
+          name: item.name,
         },
         unit_amount: item.price * 100 * 80,
       },
@@ -39,8 +39,8 @@ const placeOrder = async (req, res) => {
       quantity: 1,
     });
 
-    const session = await stripe.checkout.session.create({
-      line_Items: line_Items,
+    const session = await stripe.checkout.sessions.create({
+      line_items: line_Items,
       mode: "payment",
       success_url: `${frontend_url}/verify?success=true&orderId=${newOrder._id}`,
       cancel_url: `${frontend_url}/verify?success=false&orderId=${newOrder._id}`,
