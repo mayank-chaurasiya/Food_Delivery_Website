@@ -3,7 +3,6 @@ import axios from "axios";
 import "./List.css";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
-import { assets } from "../../assets/assets";
 
 const List = ({ url }) => {
   const [list, setList] = useState([]);
